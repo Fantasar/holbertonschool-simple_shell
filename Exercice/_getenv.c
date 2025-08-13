@@ -31,15 +31,15 @@ len = strlen(name);
 while (environ[index] != NULL)
 	{
 	variable = environ[index];
-	taille = strcmp(variable, name, len);
+	taille = strncmp(variable, name, len);
 	next_char = variable[len];
 
-	if (taille == 0 && nex_char == '=')
+	if (taille == 0 && next_char == '=')
 		{
-		return (var + len + 1);
+		return (variable + len + 1);
 		}
 
 	index++;
 	}
-retunr (NULL);
+return (NULL);
 }
