@@ -18,4 +18,7 @@ pid_t fork(void);
 int execve(const char *pathname, char *const argv[], char *const envp[]);
 pid_t wait(int *wstatus);
 int fprintf(FILE *stream, const char *format, ... );
+char *_getenv(const char *name);
+int strncmp(const char *s1, const char *s2, size_t n);
+
 #endif
