@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
 
 /*===== Prototypes =====*/
 
@@ -16,4 +17,5 @@ char *strtok(char *str, const char *delim);
 pid_t fork(void);
 int execve(const char *pathname, char *const argv[], char *const envp[]);
 pid_t wait(int *wstatus);
+int fprintf(FILE *stream, const char *format, ... );
 #endif
