@@ -10,33 +10,20 @@ extern char **environ;
 
 int main(int ac, char **av, char **env)
 {
+(void)ac;
+(void)av;
 
-int index = 0;
-int temp =0;
-
-while (environ[index] != NULL)
-	{
-	index++;
-	}
-
-while (env[temp] != NULL)
-	{
-	temp++;
-	}
-
-if (environ[3] == env[3])
+if (env == environ)
 	{
 	printf("Les deux variables d'environnements sont identiques\n");
-	printf("%s\n", environ[3]);
-	printf("%s\n", env[3]);
-	return (1);
+	printf("Adresse d'environnements : %p\n", (void*)environ);
+	printf("Adresse d'env            : %p\n", (void*)env);
 	}
 else
 	{
 	printf("Les variables ne sont pas identiques\n");
-	printf("%s\n", environ[3]);
-	printf("%s\n", env[3]);
-	return (0);
+	printf("Adresse d'environnements : %p\n", (void*)environ);
+	printf("Adresse d'env     : %p\n", (void*)env);
 	}
 return (0);
 }
