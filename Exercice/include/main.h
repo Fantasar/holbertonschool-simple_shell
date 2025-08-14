@@ -38,4 +38,5 @@ void directory_PATH(char *env);
 path_node_t *new_PATH_list(void);
 int _setenv(const char *name, const char *value, int overwrite);
 int putenv(char *string);
+int _unsetenv(const char *name);
 #endif
