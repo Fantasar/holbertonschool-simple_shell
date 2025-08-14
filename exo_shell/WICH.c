@@ -22,31 +22,31 @@ int main(int ac, char **av)
 	}
 	path_env = getenv("PATH");
 	if (!path_env)
-		{
-			fprintf(stderr, "PATH n'existe pas dans l'environnement\n");
-			return (1);
-		}
+	{
+		fprintf(stderr, "PATH n'existe pas dans l'environnement\n");
+		return (1);
+	}
 
 		path_copy = strdup(path_env);
 		if (!path_copy)
-			{
-				perror("strdup");
-				return (1);
-			}
-		
+		{
+			perror("strdup");
+			return (1);
+		}
+
 		dir = strtok(path_copy, ":");
 
 		while (dir)
-				{
-					snprintf(full_path, sizeof(full_path), "%s/%s", dir, av[1]);
-					if (stat(full_path, &st) == 0)
-						{
-							printf("%s\n", full_path);
-						}
-					dir = strtok(NULL, ":");
-				}
+	{
+			snprintf(full_path, sizeof(full_path), "%s/%s", dir, av[1]);
+			if (stat(full_path, &st) == 0)
+		{
+			printf("%s\n", full_path);
+		}
+
+			dir = strtok(NULL, ":");
+	}
 					free(path_copy);
 
-					return(0);
+	return (0);
 }
-			
