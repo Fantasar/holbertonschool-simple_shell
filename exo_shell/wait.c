@@ -31,5 +31,5 @@ int main(void)
 		printf("Oh, its way better now\n");
 	}
 	return (0);
-	
+
 }
