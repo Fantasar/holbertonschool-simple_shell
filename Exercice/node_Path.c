@@ -47,6 +47,13 @@ while (cut != NULL)
 	temp->dir = strdup(cut);
 	if (temp->dir == NULL)
 		{
+		free(temp);
+		free(len2);
+		return NULL;
+		}
+	temp->next = NULL;
+	if (head == NULL)
+		{
 		head = temp;
 		tail = temp;
 		}
