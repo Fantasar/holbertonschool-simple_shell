@@ -36,5 +36,7 @@ char *_getenv(const char *name);
 int strncmp(const char *s1, const char *s2, size_t n);
 void directory_PATH(char *env);
 path_node_t *new_PATH_list(void);
+int _setenv(const char *name, const char *value, int overwrite);
+
 
 #endif
