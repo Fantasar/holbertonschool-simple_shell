@@ -1,4 +1,7 @@
 #include "main.h"
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * _setenv - Add or change an environment variable
@@ -8,30 +11,30 @@
  *
  * Return: 0 on success, -1 on failure
  */
-
 int _setenv(const char *name, const char *value, int overwrite)
 {
-	char *env_str;
-	size_t len = strlen(name) + strlen(value) + 2;
+    char *env_str;
+    size_t len;
 
-		if(!name || !value || strchr(name, '='))
-		{
-			return (-1);
-		}
+    if (!name || !value || strchr(name, '=') || name[0] == '\0')
+    {
+        return (-1);
+    }
+    if (_getenv(name) && !overwrite)
+    {
+        return (0);
+    }
 
-		if (_getenv(name) && !overwrite)
-		{
-			return (0);
-		}
+    len = strlen(name) + strlen(value) + 2;
+    env_str = malloc(len);
+    if (!env_str)
+    {
+        return (-1);
+    }
 
-	env_str = malloc(len);
+    sprintf(env_str, "%s=%s", name, value);
 
-		if (!env_str)
-		{
-			return (-1);
-		}
-
-	sprintf(env_str, "%s=%s", name, value );
-
-		return putenv(env_str);
+    /* putenv garde un pointeur direct, ne pas free(env_str) */
+    return (putenv(env_str));
 }
+
