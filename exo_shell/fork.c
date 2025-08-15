@@ -2,9 +2,9 @@
 #include <unistd.h>
 
 /**
- * main - fork example
+ * main - fork & wait example
  *
- * Return : Always 0
+ * Return: 0 on success, otherwise another value on error.
  */
 
 int main(void)
@@ -22,6 +22,6 @@ int main(void)
 	printf("After fork\n");
 	my_pid = getpid();
 	printf("My pid is %u\n", my_pid);
-	
+
 	return (0);
 }
