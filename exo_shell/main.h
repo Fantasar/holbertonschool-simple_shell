@@ -25,7 +25,7 @@ typedef struct path_node
 } path_node_t;
 
 /*===== Prototypes =====*/
-
+extern char **environ;
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 char *strtok(char *str, const char *delim);
 pid_t fork(void);
