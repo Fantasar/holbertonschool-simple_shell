@@ -25,7 +25,7 @@ int main(void)
 	{
 		printf("Error : I go back in my bedroom\n");
 	}
-	else	
+	else
 	{
 		totem = strtok(string, " ");
 		while (totem != NULL)
