@@ -14,20 +14,20 @@ int _unsetenv(const char *name)
 
 	if (!name || strchr(name, '='))
 	return (-1);
-	
+
 	len = strlen(name);
 
 	for (i = 0; environ[i]; i++)
 	{
 		if (strncmp(environ[i], name, len) == 0 &&
 		environ[i][len] == '=')
-	
+
 		{
-		for(j = i; environ[j]; j++)
+		for (j = i; environ[j]; j++)
 			environ[j] = environ[j + 1];
 		i--;
 		}
-	
+
 	}
 	return (0);
 }
