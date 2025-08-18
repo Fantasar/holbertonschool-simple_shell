@@ -23,7 +23,16 @@ void find_PATH(char *argv[], char **environ)
 		size_t size = strlen(dir) + strlen(argv[0]) + 2;
 		char *full_path = malloc(size);
 
-		snprintf(full_path, size, "%s/%s", dir, argv[0]);
+		if (full_path == NULL)
+		{
+			perror("malloc");
+			free(copy);
+			exit(1);
+		}
+
+		strcpy(full_path, dir);
+		strcat(full_path, "/");
+		strcat(full_path, argv[0]);
 
 		if (access(full_path, X_OK) == 0)
 		{
