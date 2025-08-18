@@ -45,13 +45,12 @@ while (1)
 
 	if (temp[0] == '\0')
 		continue;
-
+	index = 0;
 	user = fork();
 
 	if (user == -1)
 		{
 		perror("fork");
-		free(temp);
 		continue;
 		}
 
@@ -64,9 +63,12 @@ while (1)
 			token = strtok(NULL, " ");
 			}
 		argv[index] = NULL;
-		execve(argv[0], argv, environ);
-		perror("execve");
-		exit(1);
+		if (argv[0] != NULL)
+			{
+			execve(argv[0], argv, environ);
+			perror("execve");
+			exit(1);
+			}
 		}
 	else
 		{
