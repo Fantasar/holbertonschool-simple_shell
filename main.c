@@ -23,17 +23,18 @@ int main(void)
 	{
 		printf("$ ");
 		len = getline(&temp, &num, stdin);
-
 		if (len == -1)
 		{
 			printf("\n");
 			break;
 		}
 		temp[strcspn(temp, "\n")] = '\0';
-
 		if (temp[0] == '\0')
 		continue;
+		cut_command(temp, argv);
 
+		if (handle_builtin(argv))
+			continue;
 		user = fork();
 		if (user == -1)
 		{
@@ -42,7 +43,6 @@ int main(void)
 		}
 		if (user == 0)
 		{
-			cut_command(temp, argv);
 			execute_command(argv, environ);
 			exit(1);
 		}
