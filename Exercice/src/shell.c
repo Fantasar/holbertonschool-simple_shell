@@ -52,7 +52,7 @@ while (1)
 		{
 		perror("fork");
 		free(temp);
-		return (1);
+		continue;
 		}
 
 	if (user == 0)
