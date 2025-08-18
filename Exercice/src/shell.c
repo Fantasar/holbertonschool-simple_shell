@@ -27,7 +27,6 @@ char *temp = NULL;
 size_t num = 0;
 ssize_t len;
 pid_t user;
-int index = 0;
 char *argv[64];
 
 while (1)
@@ -51,8 +50,7 @@ while (1)
 	if (user == -1)
 		{
 		perror("fork");
-		free(temp);
-		return (1);
+		continue;
 		}
 
 	if (user == 0)
