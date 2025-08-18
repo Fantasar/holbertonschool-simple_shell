@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * find_PATH - Search and run a command from PATH
- * @argv: array of arguments (command + options)
- * @environ: environment variables
+ * find_PATH - Search and run a command from PATH.
+ * @argv: array of arguments (command + options).
+ * @environ: environment variables.
  *
  * This function gets the PATH variable and splits it into
  * directories. For each directory, it builds a possible
