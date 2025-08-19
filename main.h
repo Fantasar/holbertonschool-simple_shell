@@ -18,6 +18,7 @@ void find_PATH(char *argv[], char **environ);
 void execute_command(char *argv[], char **environ);
 void cut_command(char *input_user, char *argv[]);
 int handle_builtin(char *argv[]);
+int try_exe(char *dir, char *argv[], char **environ);
 
 /*===== Larousse Function =====*/
 
