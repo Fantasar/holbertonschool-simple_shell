@@ -21,10 +21,9 @@ void execute_command(char *argv[], char **environ)
 	if (strchr(argv[0], '/') != NULL)
 	{
 		execve(argv[0], argv, environ);
-		perror("execve");
+		perror(argv[0]);
+		exit(127);
 	}
-	else
-	{
-		find_PATH(argv, environ);
-	}
+	find_PATH(argv, environ);
+	exit(127);
 }
