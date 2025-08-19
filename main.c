@@ -19,13 +19,14 @@ int main(void)
 
 	while (1)
 	{
+		if (isatty(STDIN_FILENO))
+		{
 		printf("#cisfun$ ");
 		fflush(stdout);
-
+		}
 		read_len = getline(&line, &len, stdin);
 		if (read_len == -1)
 		{
-			printf("\n");
 			break;
 		}
 
