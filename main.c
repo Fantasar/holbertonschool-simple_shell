@@ -12,44 +12,48 @@
  */
 int main(void)
 {
-	char *line = NULL;
-	size_t len = 0;
-	ssize_t read_len;
-	char *argv[2];
+	char *temp = NULL;
+	size_t num = 0;
+	ssize_t len;
+	pid_t user;
+	char *argv[64];
 
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
 		{
-		printf("#cisfun$ ");
-		fflush(stdout);
+			printf("#cisfun$ ");
+			fflush(stdout);
 		}
-		read_len = getline(&line, &len, stdin);
-		if (read_len == -1)
+		len = getline(&temp, &num, stdin);
+
+		if (len == -1)
 		{
 			break;
 		}
 
-		line[read_len - 1] = '\0';
+		temp[strcspn(temp, "\n")] = '\0';
 
-		if (line[0] == '\0')
+		if (temp[0] == '\0')
 			continue;
 
-		argv[0] = line;
-		argv[1] = NULL;
-
-		if (fork() == 0)
+		user = fork();
+		if (user == -1)
 		{
-			execve(argv[0], argv, environ);
-			perror("./shell");
-			_exit(1);
+			perror("fork");
+			continue;
 		}
+		if (user == 0)
+		{
+			cut_command(temp, argv);
+			execute_command(argv, environ);
+			exit(1);
+ 		}
 		else
 		{
 			wait(NULL);
 		}
 	}
-
-	free(line);
-	return (0);
+	free(temp);
+	return 0;
 }
