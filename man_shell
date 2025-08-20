@@ -1,0 +1,72 @@
+.TH HSH 1 "August 2025" "Holberton School" "User Commands"
+.SH NAME
+hsh \- a simple UNIX command line interpreter
+.SH SYNOPSIS
+.B ./hsh
+.RI [ script ]
+.SH DESCRIPTION
+.B hsh
+is a simple UNIX shell implemented in C as part of the Holberton School curriculum.
+It provides a command-line interface where users can type commands, execute them,
+and interact with the operating system.
+
+The shell supports both interactive and non-interactive modes:
+.IP \(bu
+In interactive mode, it displays a prompt (\fB#cisfun$\fR) and waits for user input.
+.IP \(bu
+In non-interactive mode, it executes commands received from a script or piped input.
+
+.SH FEATURES
+.TP
+.B Command execution
+Supports execution of programs using either their absolute/relative path or by searching in the \fBPATH\fR environment variable.
+.TP
+.B Built-in commands
+.IP \(bu
+\fBexit\fR \- exits the shell
+.IP \(bu
+\fBenv\fR \- prints the current environment
+.TP
+.B Error handling
+If a command cannot be found or executed, an error message is displayed and the prompt reappears.
+.TP
+.B Arguments
+Supports command lines with arguments.
+.TP
+.B End of file
+Properly handles end-of-file condition (\fBCtrl+D\fR).
+
+.SH OPTIONS
+Currently, \fBhsh\fR does not support command-line options.
+
+.SH EXAMPLES
+Interactive usage:
+.EX
+$ ./hsh
+#cisfun$ ls -l
+#cisfun$ echo "Hello World"
+#cisfun$ exit
+.EE
+
+Non-interactive usage:
+.EX
+$ echo "ls -l" | ./hsh
+$ ./hsh < script.sh
+.EE
+
+.SH LIMITATIONS
+This shell does not yet support advanced features such as:
+.IP \(bu
+Directory navigation (\fBcd\fR)
+.IP \(bu
+Pipelines (\fB|\fR)
+.IP \(bu
+I/O redirection (\fB>\fR, \fB<\fR)
+
+.SH AUTHOR
+Lapique Philippe <ph.lapique@example.com>
+
+.SH SEE ALSO
+.BR sh (1),
+.BR bash (1),
+.BR zsh (1)
