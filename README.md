@@ -92,17 +92,21 @@ We decided to split the code into multiple files to better divide the tasks and 
 - **Man_shell** : Manual page describing how to use the shell  
 - **Author** : File containing information about the project’s author(s)  
 
-🛠️ Compilation :
+<img width="364" height="210" alt="Arbres des fichiers" src="https://github.com/user-attachments/assets/dbac5c6e-b77a-4759-ae7d-373634597784" />
+
+## 🛠️ Compilation :
 
 To compile the project, use the following command.
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
-Example Usage :
+## Example Usage :
 
-Man Page
+<img width="1666" height="919" alt="Exemple de Shell" src="https://github.com/user-attachments/assets/21a1d78c-7fcd-4c3e-9f87-102d4c5dd2c1" />
+
+## Man Page :
 For more information about how the function works or how to troubleshoot errors, refer to the manual page man_page_shell included in the project folder.
 
-Flowcharts :
+## Flowcharts :
 
 ![Flowchart](Exercice/Flowchart.png)
  
