@@ -61,4 +61,47 @@ The goal of this exercise is to create a simple UNIX command-line shell that tak
 | `wait4` | man 2 wait4 |
 | `write` | man 2 write |
 
+## 🗂️ Project Organization
+
+**Estimated project duration:** 80 hours  
+The work was carried out in person on the Bordeaux campus.  
+
+Development was organized using two separate branches:  
+- **main**: stored the final project version.  
+- **philippe_dev**: development branch used for testing and drafts.  
+
+A dedicated folder called **exercise/** was also included in the repository.  
+It contains test files for basic functions before they were assembled into the main shell project.  
+
+Regular check-ins were conducted to review progress and ensure smooth integration.  
+At the end of the project, a pull request was used to merge everything into the **main** branch.  
+
+## 🧱 Project Structure
+
+We decided to split the code into multiple files to better divide the tasks and to isolate functionalities for easier debugging and testing.
+
+- **README.md** : Contains explanations about the project and its structure  
+- **.gitignore** : Specifies intentionally untracked files to be ignored by Git  
+- **_getenv.c** : Custom implementation of the `_getenv` function to retrieve environment variables  
+- **cut.c** : Splits the command line into arguments (tokenization)  
+- **execute.c** : Handles execution of commands (direct path or via PATH)  
+- **find.c** : Searches for commands in the directories listed in the PATH environment variable  
+- **handle.c** : Manages built-in commands such as `exit` and `env`  
+- **main.c** : Main loop of the shell, handling user input and process management  
+- **main.h** : Header file containing function prototypes and required libraries  
+- **Man_shell** : Manual page describing how to use the shell  
+- **Author** : File containing information about the project’s author(s)  
+
+🛠️ Compilation :
+
+To compile the project, use the following command.
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+
+Example Usage :
+
+Man Page
+For more information about how the function works or how to troubleshoot errors, refer to the manual page man_page_shell included in the project folder.
+
+Flowcharts :
+
  
