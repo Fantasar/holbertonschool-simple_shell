@@ -1,19 +1,23 @@
-Mini Shell Project by Lapique Philippe
+# Mini Shell Project by Lapique Philippe
 
-Mon projet pour la fin du trimestre en langage C chez Holberton School. L'exercice consiste en la réalisation d'un terminal de commande sous UNIX, qui prends en compte les variables d'environnement ainsi que les commandes rentrer par l'utilisateur avec une fonction de sortie par commande (exit) ou raccourcie clavier (ctrl + d).
+This project was developed as part of the Holberton School C curriculum for the end of the trimester.  
+The goal of this exercise is to create a simple UNIX command-line shell that takes into account environment variables, user input commands, and includes an exit feature through either the `exit` command or the keyboard shortcut `Ctrl+D`.
 
-Objectif du projet : 
+---
 
-  . Display a prompt and wait for the user to type a command. 
-  . A command line always ends with a new line.
-  . The prompt is displayed again each time a command has been executed.
-  . If an executable cannot be found, print an error message and display the prompt again.
-  . Handle errors, have to handle the “end of file” condition (Ctrl+D)
-  . Handle command lines with arguments and the PATH.
-  . Implement the env built-in, that prints the current environment.
-  . Implement the exit built-in, that exits the shell.
+## 🎯 Project Objectives
 
-Liste des fonctions autoriser pour mon projet :
+- Display a prompt and wait for the user to type a command.  
+- Each command line must always end with a new line.  
+- The prompt must be displayed again after each executed command.  
+- If an executable cannot be found, print an error message and display the prompt again.  
+- Properly handle errors and the “end of file” condition (`Ctrl+D`).  
+- Handle command lines with arguments and the `PATH`.  
+- Implement the built-in command `env` to print the current environment.  
+- Implement the built-in command `exit` to exit the shell.  
+
+---
+
 
 ## 📜 Allowed Functions and System Calls  
 
