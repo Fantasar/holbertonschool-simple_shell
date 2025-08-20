@@ -104,4 +104,5 @@ For more information about how the function works or how to troubleshoot errors,
 
 Flowcharts :
 
+![Diagramme sans nom.drawio (1).png](Exercice/Diagramme sans nom.drawio (1).png)
  
